@@ -19,7 +19,7 @@ const Home = () => {
   const fetchNFTs = async () => {
     let nfts;
     console.log("fetching nfts");
-    const api_key = "_amZF2LlPLkJeMkeAYWBCOeryQQ9caea"
+    const api_key = "EnterAPIHere"
     const baseURL = `https://eth-mainnet.alchemyapi.io/v2/${api_key}/getNFTs/`;
     var requestOptions = {
       method: 'GET'
@@ -51,7 +51,7 @@ const Home = () => {
 
       };
 
-      const api_key = "_amZF2LlPLkJeMkeAYWBCOeryQQ9caea"
+      const api_key = "EnterAPIHere"
       const baseURL = `https://eth-mainnet.alchemyapi.io/v2/${api_key}/getNFTsForCollection/`;
       const fetchURL = `${baseURL}?contractAddress=${collection}&withMetadata=${"true"}&startToken=${startToken}`;
       const nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
@@ -135,23 +135,3 @@ export default Home
 1. add button to copy NFT owner address. 
 2. add button to list next\previous 100 NFTs 
 
-
-// Github: https://github.com/alchemyplatform/alchemy-sdk-js
-// Setup: npm install alchemy-sdk
-import { Network, Alchemy } from "alchemy-sdk";
-
-// Optional Config object, but defaults to demo api-key and eth-mainnet.
-const settings = {
-  apiKey: "demo", // Replace with your Alchemy API Key.
-  network: Network.ETH_MAINNET, // Replace with your network.
-};
-
-const alchemy = new Alchemy(settings);
-
-// Print total NFT collection returned in the response:
-alchemy.nft
-  .getNftsForContract("0x61fce80d72363b731425c3a2a46a1a5fed9814b2")
-  .then(console.log);
-
-
-  */
